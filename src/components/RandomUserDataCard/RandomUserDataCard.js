@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "./RandomUserDataCard.css";
 
 const RandomUserDataCard = ({ user }) => {
@@ -15,42 +17,42 @@ const RandomUserDataCard = ({ user }) => {
   ];
   const UserData = ({ user }) => {
     const data = [
-      <p className="text-[16px] text-gray-500">
+      <p className="text-[20px] ">
         Hi my name is{" "}
-        <span className="text-[38px] text-black mr-1">
+        <span className="text-[38px]  mr-1">
           <p>
             {user.name.first} {user.name.last}
           </p>
         </span>
       </p>,
-      <p className="text-[16px] text-gray-500">
+      <p className="text-[20px]  ">
         My email adders is{" "}
-        <span className="text-[38px] text-black mr-1">
+        <span className="text-[38px]  mr-1">
           <p>{user.email}</p>
         </span>
       </p>,
-      <p className="text-[16px] text-gray-500">
+      <p className="text-[20px]  ">
         I was born is{" "}
-        <span className="text-[38px] text-black mr-1">
+        <span className="text-[38px]  mr-1">
           <p>{user.dob.date.slice(0, 10)}</p>
         </span>
       </p>,
-      <p className="text-[16px] text-gray-500">
+      <p className="text-[20px]  ">
         My country is{" "}
-        <span className="text-[38px] text-black mr-1">
+        <span className="text-[38px]  mr-1">
           <p>{user.location.country}</p>
         </span>
       </p>,
 
-      <p className="text-[16px] text-gray-500">
+      <p className="text-[20px] t ">
         My phone number is{" "}
-        <span className="text-[38px] text-black mr-1">
+        <span className="text-[38px] mr-1">
           <p>{user.phone}</p>
         </span>
       </p>,
-      <p className="text-[16px] text-gray-500">
+      <p className="text-[20px] ">
         My password is{" "}
-        <span className="text-[38px] text-black mr-1">
+        <span className="text-[38px] mr-1">
           <p>{user.login.password}</p>
         </span>
       </p>,
@@ -62,8 +64,9 @@ const RandomUserDataCard = ({ user }) => {
   const activeLinkHandler = (index) => {
     setActiveLink(index);
   };
+  AOS.init();
   return (
-    <div className="card mt-7 p-7 bg-white rounded-md">
+    <div className="card mt-7 p-7 bg-white rounded-md" data-aos="zoom-in-down">
       <div className="flex justify-center items-center">
         {" "}
         <img className="userImg " src={user.picture.large} alt="" />
