@@ -66,7 +66,11 @@ const RandomUserDataCard = ({ user }) => {
   };
   AOS.init();
   return (
-    <div className="card mt-7 p-7 bg-white rounded-md" data-aos="zoom-in-down">
+    <div
+      className="card mt-7 p-7 bg-white rounded-md"
+      data-aos="fade-up"
+      data-aos-anchor-placement="top-center"
+    >
       <div className="flex justify-center items-center">
         {" "}
         <img className="userImg " src={user.picture.large} alt="" />
